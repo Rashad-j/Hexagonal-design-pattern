@@ -1,11 +1,11 @@
 
-# Mobile Device Management API
+# Mobile Device Management API (Hexagonal pattern example)
 
 This is a RESTful API built in Go using the Gin framework. It supports basic mobile device management operations such as adding, updating, deleting, and listing devices in store. The architecture follows a Hexagonal (Ports and Adapters) design pattern, making the system scalable and maintainable.
 
 ## Table of Contents
 
-- [Mobile Device Management API](#mobile-device-management-api)
+- [Mobile Device Management API (Hexagonal pattern example)](#mobile-device-management-api-hexagonal-pattern-example)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Project Structure](#project-structure)
@@ -142,13 +142,11 @@ The API provides the following endpoints:
 
 ## Testing
 
-The project includes unit tests for the business logic. You can run the tests using the following command:
+The project uses dedicated tests folder, making the code tidy and avoid cluttering files all together. You can run the tests using the following command:
 
 ```bash
 go test ./...
 ```
-
-Make sure to maintain good test coverage as you add new features to the API.
 
 
 ## OpenAPI Documentation
@@ -195,7 +193,7 @@ This project is open-source and licensed under the [MIT License](LICENSE).
 
 ## Author
 
-- **Your Name**
+- **Rashad Jamara**
 - GitHub: [rashad-j](https://github.com/rashad-j)
 
 Feel free to fork this repository and contribute by opening a pull request!
