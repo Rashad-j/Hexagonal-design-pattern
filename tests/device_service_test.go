@@ -2,6 +2,7 @@ package tests
 
 import (
 	"testing"
+	"time"
 
 	"github.com/golang/mock/gomock"
 	"github.com/google/uuid"
@@ -76,13 +77,28 @@ func TestDeviceService_UpdateDevice(t *testing.T) {
 	mockRepo := NewMockDeviceRepository(ctrl)
 	service := usecases.NewDeviceService(mockRepo)
 
-	id := uuid.New()
 	device := domain.CreateDeviceInput{
 		Name:  "iPhone 13",
 		Brand: "Apple",
 	}
 
-	mockRepo.EXPECT().Update(id, device).Return(nil).Times(1)
+	id := uuid.New()
+	now := time.Now()
+	currentDevice := domain.Device{
+		ID:        id,
+		Name:      "iPhone 12",
+		Brand:     "Apple",
+		CreatedAt: now,
+	}
+
+	updatedDevice := domain.Device{
+		ID:        id,
+		Name:      "iPhone 13",
+		Brand:     "Apple",
+		CreatedAt: now,
+	}
+	mockRepo.EXPECT().GetById(id).Return(currentDevice, nil).Times(1)
+	mockRepo.EXPECT().Update(id, updatedDevice).Return(nil).Times(1)
 
 	result, err := service.UpdateDevice(id, device)
 	assert.Equal(t, device.Name, result.Name)

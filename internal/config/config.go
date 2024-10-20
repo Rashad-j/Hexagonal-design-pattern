@@ -16,6 +16,11 @@ func LoadConfig() *Config {
 	}
 }
 
+func (c *Config) WithPort(port string) *Config {
+	c.Port = port
+	return c
+}
+
 func getEnv(key string, defaultValue string) string {
 	value, exists := os.LookupEnv(key)
 	if !exists {
