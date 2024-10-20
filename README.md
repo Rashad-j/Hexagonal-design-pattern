@@ -100,7 +100,7 @@ You can run the API locally by executing the following command:
 go run cmd/main.go
 ```
 
-The API will be available at [http://localhost:8080](http://localhost:8080).
+The API will be available at [http://localhost:8080/v1](http://localhost:8080/v1). Test if it's running successfully by accessing [http://localhost:8080/v1/ping](http://localhost:8080/v1/ping)
 
 ### Run with Docker
 
