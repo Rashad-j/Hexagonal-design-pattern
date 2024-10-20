@@ -46,25 +46,25 @@ device-management-api/
 ├── internal/
 │   ├── core/
 │   │   ├── domain/
-│   │   │   └── device.go              # Domain model
+│   │   │   └── device.go           # Domain model
 │   │   └── ports/
-│   │       └── device_repo.go         # Repository interface (Port)
+│   │       └── device_repo.go      # Repository interface (Port)
 │   ├── adapters/
 │   │   ├── repository/
-│   │   │   └── memory_repo.go         # In-memory repository (Adapter)
+│   │   │   └── memory_repo.go      # In-memory repository (Adapter)
 │   │   └── http/
-│   │       ├── device_handler.go      # HTTP handler for devices (Adapter)
-│   │       └── server.go              # Generic server logic
+│   │       ├── device_handler.go   # HTTP handler for devices (Adapter)
+│   │       └── server.go           # Generic server logic
 │   └── usecases/
-│       └── device_service_test.go     # Business logic (Use case)
-│       └── device_handler_test.go     # Http handler tests
-│       └── mock_*_test.go             # Gmock generated files
+│       └── device_service_.go      # Business logic (Use case)
 ├── tests/
-│   └── device_service_test.go         # Unit tests for services
-├── Dockerfile                         # Docker configuration
-├── go.mod                             # Go modules
+│   ├── device_service_test.go      # Unit tests for services
+│   ├── device_handler_test.go      # Http handler tests
+│   └── mock_*_test.go              # Any gmock generated files
+├── Dockerfile                      # Docker configuration
+├── go.mod                          # Go modules
 ├── go.sum
-└── README.md                          # Documentation
+└── README.md                       # Documentation
 ```
 
 ## Prerequisites
