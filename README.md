@@ -1,11 +1,11 @@
 
-# Mobile Device Management API (Hexagonal pattern example)
+# Mobile Device Management API (Hexagonal pattern)
 
 This is a RESTful API built in Go using the Gin framework. It supports basic mobile device management operations such as adding, updating, deleting, and listing devices in store. The architecture follows a Hexagonal (Ports and Adapters) design pattern, making the system scalable and maintainable.
 
 ## Table of Contents
 
-- [Mobile Device Management API (Hexagonal pattern example)](#mobile-device-management-api-hexagonal-pattern-example)
+- [Mobile Device Management API (Hexagonal pattern)](#mobile-device-management-api-hexagonal-pattern)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Project Structure](#project-structure)
@@ -42,27 +42,29 @@ The project is utilizing a hexagonal architecture (Ports and Adapters) to ensure
 ```
 device-management-api/
 ├── cmd/
-│   └── main.go                  # Entry point for the application
+│   └── main.go                        # Entry point for the application
 ├── internal/
 │   ├── core/
 │   │   ├── domain/
-│   │   │   └── device.go         # Domain model
+│   │   │   └── device.go              # Domain model
 │   │   └── ports/
-│   │       └── device_repo.go    # Repository interface (Port)
+│   │       └── device_repo.go         # Repository interface (Port)
 │   ├── adapters/
 │   │   ├── repository/
-│   │   │   └── memory_repo.go    # In-memory repository (Adapter)
+│   │   │   └── memory_repo.go         # In-memory repository (Adapter)
 │   │   └── http/
-│   │       ├── device_handler.go # HTTP handler for devices (Adapter)
-│   │       └── server.go         # Generic server logic
+│   │       ├── device_handler.go      # HTTP handler for devices (Adapter)
+│   │       └── server.go              # Generic server logic
 │   └── usecases/
-│       └── device_service.go     # Business logic (Use case)
+│       └── device_service_test.go     # Business logic (Use case)
+│       └── device_handler_test.go     # Http handler tests
+│       └── mock_*_test.go             # Gmock generated files
 ├── tests/
-│   └── device_service_test.go    # Unit tests for services
-├── Dockerfile                    # Docker configuration
-├── go.mod                         # Go modules
+│   └── device_service_test.go         # Unit tests for services
+├── Dockerfile                         # Docker configuration
+├── go.mod                             # Go modules
 ├── go.sum
-└── README.md                     # Documentation
+└── README.md                          # Documentation
 ```
 
 ## Prerequisites
