@@ -180,6 +180,7 @@ The generated Swagger specs will be placed in the `docs` folder, and they can be
 ## Future Improvements
 
 - Add more use cases (e.g., User Management) to test the flexibility of the system.
+- Add authentication support.
 - Add support for persistent storage (e.g., PostgreSQL, MongoDB) instead of the in-memory repository.
 - Implement authentication and authorization for better security.
 - Improve unit test coverage and add integration tests.
